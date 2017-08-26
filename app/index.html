@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html ng-app="blocChat">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Bloc Chat Project</title>
-    <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body>
+  <head lang="en">
+      <meta charset="UTF-8">
+      <title>Bloc Chat Project</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+      <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+      <link rel="stylesheet" href="/styles/main.css">
+      <link rel="stylesheet" href="/styles/room.css">
 
-    <ui-view></ui-view>
+  </head>
+    <body>
 
+        <ui-view></ui-view>
 
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <!-- AngularUI Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-    <!-- FireBase -->
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyA5kY2iT1l-C8DOfwdNbUuYetHhmVplj60",
-        authDomain: "bloc-chat-68970.firebaseapp.com",
-        databaseURL: "https://bloc-chat-68970.firebaseio.com",
-        projectId: "bloc-chat-68970",
-        storageBucket: "",
-        messagingSenderId: "501708284270"
-    };
-    firebase.initializeApp(config);
-    </script>
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <!-- Application Files -->
-    <script src="/scripts/app.js"></script>
-</body>
+        <!-- Angular -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!-- AngularUI Router -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+        <!-- FireBase -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA5kY2iT1l-C8DOfwdNbUuYetHhmVplj60",
+            authDomain: "bloc-chat-68970.firebaseapp.com",
+            databaseURL: "https://bloc-chat-68970.firebaseio.com",
+            projectId: "bloc-chat-68970",
+            storageBucket: "",
+            messagingSenderId: "501708284270"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+        <!-- Application Files -->
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/services/Room.js"></script>
+        <script src="/scripts/controllers/HomeCtrl.js"></script>
+        <script src="/scripts/controllers/RoomCtrl.js"></script>
+    </body>
 </html>
