@@ -1,10 +1,8 @@
  <h1>Home Page</h1>
    <section class="left-side navigation">
-     <table class="control-room">
-       <tr class="room-number" ng-repeat="room in home.room">
-         dfdfdf
-         <td class="room-value">
-           aaaaaa
+     <table class="control-room clearfix">
+       <tr class="room-number" ng-repeat="item in home.room">
+         <td class="room-value">  {{ item }}
          </td>
        </tr>
      </table>

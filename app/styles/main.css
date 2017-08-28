@@ -1,4 +1,4 @@
-html  {
+html {
   height: 100%;
   font-size: 100%;
 }
@@ -10,6 +10,21 @@ body {
   min-height: 100%;
 }
 
+.control-room {
+  width: 90%;
+  margin: 1.5rem;
+  font-size: 1rem;
+  border-collapse: collapse;
+}
+
+.room-number  {
+  height: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.room-value {
+  width: 10%;
+}
 
 @media (min-width: 640px) {
   html  { font-size: 112%;}
