@@ -4,14 +4,28 @@
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
 
-    var query = 
+    var query;
 
+    /** @method .all
+    **  @desc array of room {objects}
+    **  @type {array}
+    **  @public
+    */
     Room.all = rooms;
-    /*Room.getRooms = function(numberOfRooms) {
-      this.rooms = [];
-      this.rooms.push(ref);
-      return this.rooms;
-    };*/
+
+    /** @method .add
+    **  @desc add rooms to Room Object
+    **  @type {object} room
+    **  @public
+    */
+    Room.add = function(room) {
+      rooms.$add( {room : 'room#'}  ).then(function(ref) {
+        var id = ref.key;
+        console.log("added record with id: " +id);
+        rooms.$indexFor(id);  //returns location in the array
+      });
+    };
+    console.log(Room);
   return Room;
   }
 

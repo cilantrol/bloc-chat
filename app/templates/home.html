@@ -1,10 +1,13 @@
- <h1>Home Page</h1>
+ <h1>Bloc Chat</h1>
    <section class="left-side navigation">
-     <table class="control-room clearfix">
-       <tr class="room-number" ng-repeat="item in home.room">
-         <td class="room-value">  {{ item }}
-         </td>
-       </tr>
-     </table>
+     <table class="control-room">
+        <tr class="room-number" ng-repeat="object in home.room">
+          <td class="room-value">{{$index+1}} {{object.$value }}
+          </td>
+        </tr>
+          <a class="room-add" ng-click="home.roomAdd.add(object)">Add Room
+            <span class="ion-ios-plus"></span>
+          </a>
+      </table>
    </section>
 <!--<ng-include src="'/templates/room.html'"></ng-include>-->
