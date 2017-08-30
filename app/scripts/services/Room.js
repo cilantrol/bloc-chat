@@ -18,13 +18,15 @@
     **  @type {object} room
     **  @public
     */
+    /*  MOVING THIS TO MODAL.js SERVICE
     Room.add = function(room) {
-      rooms.$add( {room : 'room#'}  ).then(function(ref) {
+      rooms.$add( new_room  );
+      .then(function(ref) {
         var id = ref.key;
         console.log("added record with id: " +id);
         rooms.$indexFor(id);  //returns location in the array
       });
-    };
+    };*/
     console.log(Room);
   return Room;
   }

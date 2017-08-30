@@ -1,7 +1,14 @@
 (function() {
     function HomeCtrl(Room) {
       this.room = Room.all;
-      this.roomAdd = Room;
+      this.open = function() {
+        $uibModal.open({
+          animation: true,
+          templateUrl: '/templates/modal.html',
+          controller: 'ModalCtrl as modal',
+          backdrop: 'static'
+        });
+      };
     }
 
     angular
