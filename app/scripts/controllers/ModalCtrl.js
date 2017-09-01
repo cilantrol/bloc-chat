@@ -5,7 +5,11 @@
       this.defaultStatement = '';
 
       this.ok = function() {
-        Room.add(this.defaultStatement);
+        if(this.defaultStatement.length < 1){
+          return;
+        }else {
+          Room.add(this.defaultStatement);
+        }
       };
 
       this.cancel = function() {

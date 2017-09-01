@@ -19,7 +19,7 @@
     **  @public
     */
     Room.add = function(room) {
-      rooms.$add({room: value});
+      rooms.$add( {name: room} );
       /*.then(function(ref) {
         var id = ref.key;
         console.log("added record with id: " +id);
