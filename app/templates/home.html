@@ -2,9 +2,9 @@
    <section class="left-side navigation">
      <table class="control-room">
         <tr class="room-number" ng-repeat="object in home.room">
-          <td class="room-value">{{$index+1}} {{object.$value }}
+          <td class="room-value">{{$index+1}} {{object.name }}
           </td>
         </tr>
       </table>
    </section>
-   <ng-include src="'/templates/modal.html'"></ng-include>
+   <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>

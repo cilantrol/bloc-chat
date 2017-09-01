@@ -6,18 +6,16 @@
     <h4 class="modal-title">modal header</h4>
   </div>
   <div class="modal-body modal-sm">
-    <form ng-submit="home.modal.ok()">
+    <form ng-submit="modal.ok()">
       <div class="input-group animated fadeIn">
-        <input type="text" class="form-control finderBar" ng-model="defaultStatement" placeholder="Please enter a Room..." autofocus>
+        <input type="text" class="form-control finderBar" ng-model="modal.defaultStatement" placeholder="Please enter a Room..." autofocus>
         <span class="input-group-btn">
-          <button class="btn btn-default btn-success" type="button" ng-click="home.modal.ok()">Add</button>
+          <button class="btn btn-default btn-success" type="button" ng-click="modal.ok()">Add</button>
         </span>
       </div>
     </form>
 
   </div>
   <div class="modal-footer modal-sm">
-    <button class="btn btn-primary" type="button" ng-click="home.modal.cancel()" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
   </div>
-
-  <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>

@@ -1,21 +1,20 @@
 (function() {
-    function ModalCtrl(Modal, Room, $uibModalInstance) {
+    function ModalCtrl(Room, $uibModalInstance) {
       this.room = Room.all;
 
       this.defaultStatement = '';
 
       this.ok = function() {
-        alert('room name is ' + this.defaultStatement + '!');
-        $uibModalInstance.close(this.defaultStatement);
+        Room.add(this.defaultStatement);
       };
 
       this.cancel = function() {
-        $uibModalInstance.dismiss('cancel');
+        $uibModalInstance.close();
       };
 
     }
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['Modal', 'Room', '$uibModalInstance', ModalCtrl]);
+        .controller('ModalCtrl', ['Room', '$uibModalInstance', ModalCtrl]);
 })();
