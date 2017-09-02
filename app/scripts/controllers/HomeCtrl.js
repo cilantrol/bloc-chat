@@ -9,6 +9,14 @@
           backdrop: 'static'
         });
       };
+
+      this.chat = function() {
+        $uibModal.open({
+          animation: false,
+          templateUrl: '/templates/chat.html',
+          backdrop: 'static'
+        });
+      };
     }
 
     angular
