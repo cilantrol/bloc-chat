@@ -1,4 +1,3 @@
-
   <div class="modal-header">
     <h4 class="modal-title">modal header</h4>
   </div>
@@ -6,15 +5,14 @@
     <form name="add-room-form" ng-submit="modal.ok()">
       <div class="input-group animated fadeIn">
         <input type="text" class="form-control finderBar"
-
         ng-model="modal.defaultStatement"
         required ng-minlength="1"
         placeholder="Please enter a Room..." autofocus>
             <span ng-show="add-room-form.$error.modal.defaultStatement">Room Name can not be empty!</span>
         <span class="input-group-btn">
           <button class="btn btn-default btn-success" type="submit"
-          ng-disabled="add-room-form.$invalid"
-          ng-click="modal.ok()">Add</button>
+          ng-disabled="add-room-form.$invalid">Add</button>
+            <span var="errorValue">{{ errorStatement }}</span>
         </span>
       </div>
     </form>
