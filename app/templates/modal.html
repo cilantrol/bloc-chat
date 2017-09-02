@@ -12,7 +12,7 @@
         <span class="input-group-btn">
           <button class="btn btn-default btn-success" type="submit"
           ng-disabled="add-room-form.$invalid">Add</button>
-            <span var="errorValue">{{ errorStatement }}</span>
+            <span ng-show="add-room-form.modal.errorStatement">{{ errorStatement }}</span>
         </span>
       </div>
     </form>

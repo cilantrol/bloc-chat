@@ -8,7 +8,7 @@
         if(this.defaultStatement != ' ' && this.defaultStatement != ''){
           Room.add(this.defaultStatement);
         }else {
-          this.errorStatement = "Spaces are not allowed and must 1 character long";errorValue.show();
+          this.errorStatement = "Spaces are not allowed and must 1 character long";
         }
       };
 
