@@ -3,17 +3,17 @@
     <h4 class="modal-title">modal header</h4>
   </div>
   <div class="modal-body modal-sm">
-    <form name="add-room-form">
+    <form name="addRoomForm">
       <div class="input-group animated fadeIn">
         <input type="text" class="form-control finderBar"
-
+        name="roomName"
         ng-model="modal.defaultStatement"
         required ng-minlength="1"
         placeholder="Please enter a Room..." autofocus>
-            <span ng-show="add-room-form.$error.modal.defaultStatement">Room Name can not be empty!</span>
+          <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Room Name can not be empty!</span>
         <span class="input-group-btn">
+          <!-- ng-disabled="addRoomForm.$invalid"  -->
           <button class="btn btn-default btn-success" type="submit"
-          ng-disabled="add-room-form.$invalid"
           ng-click="modal.ok()">Add</button>
         </span>
       </div>

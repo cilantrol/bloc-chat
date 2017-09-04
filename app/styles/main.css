@@ -26,6 +26,20 @@ body {
   width: 10%;
 }
 
+.container  {
+  color: blue;
+  background-color: rgba(140, 166, 189, 0.55);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 12.5%;
+  top: 0px;
+}
+
+.container .messages  {
+  position: relative;
+  left: 0%;
+}
 @media (min-width: 640px) {
   html  { font-size: 112%;}
     .column {
