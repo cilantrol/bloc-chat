@@ -1,6 +1,9 @@
 (function() {
-    function HomeCtrl(Room, $uibModal) {
-      this.room = Room.all;
+    function HomeCtrl(Room, Message, $uibModal) {
+      this.rooms = Room.all;
+      this.messages = null;
+      this.activeRoom = null;
+
       this.open = function() {
         $uibModal.open({
           animation: true,
@@ -10,16 +13,15 @@
         });
       };
 
-      this.chat = function() {
-        $uibModal.open({
-          animation: false,
-          templateUrl: '/templates/chat.html',
-          backdrop: 'static'
-        });
+      this.selectRoom = function(room)  {
+        console.log(room);
+        this.activeRoom = room.roomName;
+        this.messages = Message.getByRoomId(room.$id);
       };
+
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();

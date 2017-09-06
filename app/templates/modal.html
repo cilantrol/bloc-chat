@@ -1,19 +1,23 @@
-
   <div class="modal-header">
     <h4 class="modal-title">modal header</h4>
   </div>
   <div class="modal-body modal-sm">
+    <style>
+        input.ng-invalid{border: 1px solid red;}
+    </style>
     <form name="addRoomForm">
       <div class="input-group animated fadeIn">
+        <label for="">Room Name </label>
         <input type="text" class="form-control finderBar"
         name="roomName"
         ng-model="modal.defaultStatement"
-        required ng-minlength="1"
-        placeholder="Please enter a Room..." autofocus>
-          <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Room Name can not be empty!</span>
+        required
+        placeholder="Please enter a Room..."/>
+
         <span class="input-group-btn">
           <!-- ng-disabled="addRoomForm.$invalid"  -->
           <button class="btn btn-default btn-success" type="submit"
+          ng-disabled="addRoomForm.$invalid"
           ng-click="modal.ok()">Add</button>
         </span>
       </div>
@@ -21,5 +25,6 @@
 
   </div>
   <div class="modal-footer modal-sm">
+    <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Cannot be Empty!</span>
     <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
   </div>

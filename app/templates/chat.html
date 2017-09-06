@@ -1,10 +1,20 @@
-<section class="chat-room">
-  <h3>ChatRoom Name</h3>
-  <table>
-    <tr>
-      <td>
-      </td>
-    </tr>
-  </table>
-
+<section class="container">
+  <h3>Current Room Name</h3>
+   <div class="chat-container columms"
+   ng-repeat="messages in home.message">
+     <p> messages.user </p>
+     <p> messages.sentAt </p>
+     <p> messages.content </p>
+     <p>dafasdf</p>
+   </div>
+   <form ng-submit="">
+     <input type="text" id="chatMessage"
+     placeholder="type here..."
+     ng-model="">
+     <span class="input-group-btn">
+       <button class="btn btn-success" type="submit"
+       ng-click="">Send
+       </button>
+     </span>
+   </form>
 </section>

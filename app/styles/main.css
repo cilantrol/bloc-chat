@@ -26,6 +26,16 @@ body {
   width: 10%;
 }
 
+.help-inline  {
+  position: relative;
+  left: -86px;
+}
+
+.btn:first-child {
+    position: relative;
+    top: 1rem;
+}
+
 .container  {
   color: blue;
   background-color: rgba(140, 166, 189, 0.55);
@@ -40,6 +50,8 @@ body {
   position: relative;
   left: 0%;
 }
+
+
 @media (min-width: 640px) {
   html  { font-size: 112%;}
     .column {

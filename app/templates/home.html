@@ -1,23 +1,36 @@
- <h1>Bloc Chat</h1>
-   <section class="left-side navigation">
-     <table class="control-room">
-        <tr class="room-number" ng-repeat="object in home.room">
-          <td class="room-value">{{$index+1}} {{object.name }}
-          </td>
-        </tr>
-      </table>
-   </section>
-   <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
+<h1>Bloc Chat</h1>
+  <section class="left-side navigation">
+    <table class="control-room">
+      <tr class="room-number" ng-repeat="room in home.rooms">
+        <td class="btn-default"
+          ng-click="home.selectRoom(room)"
+          data-toggle="modal">
+          {{$index+1}} {{room.roomName }}
+        </td>
+      </tr>
+    </table>
+  </section>
 
-   <section class="container">
-     <h3>Current Room Name</h3>
-      <div class="container messages">
-        <p>dafasdf</p>
-        <p>dafasdf</p>
-        <p>username: timestamp: message</p>
-        <p>dafasdf</p>
-      </div>
-      <form ng-submit="modal.ok()">
+  <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
 
-      </form>
-   </section>
+  <section class="container">
+    <h3>{{home.activeRoom}}</h3>
+     <div class="chat-container columms"
+     ng-repeat="message in home.messages">
+       <p> {{message.user}}
+           {{message.sentAt}} :
+           {{message.content}} </p>
+     </div>
+     <form ng-submit=""
+     ng-show="home.activeRoom">
+       <input type="text" id="chatMessage"
+
+       placeholder="type here..."
+      >
+       <span class="input-group-btn">
+         <button class="btn btn-success" type="submit"
+         >Send
+         </button>
+       </span>
+     </form>
+  </section>
