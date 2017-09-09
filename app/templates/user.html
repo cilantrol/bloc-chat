@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title">Welcome, Please Create an user</h4>
+</div>
+<div class="modal-body modal-sm">
+  <style>
+      input.ng-invalid{border: 1px solid red;}
+  </style>
+  <form name="addUserForm">
+    <div class="input-group animated fadeIn">
+      <label for="">UserName</label>
+      <input type="text" class="form-control finderBar"
+      name="userName"
+      ng-model="BlocChatCookies.currentUser"
+      required
+      placeholder="Please enter an username..."/>
+
+      <span class="input-group-btn"
+        ng-disabled="addUserForm.$invalid">
+        <button class="btn btn-default btn-success" type="submit"
+        ng-disabled="addUserForm.$invalid"
+        >Create</button>
+      </span>
+    </div>
+  </form>
+
+</div>
+<div class="modal-footer modal-sm">
+  <span ng-show="addUserForm.userName.$error.required" class="help-inline">Cannot be Empty!</span>
+
+</div>

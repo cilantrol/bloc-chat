@@ -19,6 +19,12 @@
         this.messages = Message.getByRoomId(room.$id);
       };
 
+      /*this.addUser = function() {
+        $uibModal.open({
+          animation: true,
+          templateUrl: '/templates/user.html',
+        });
+      };*/
     }
 
     angular
