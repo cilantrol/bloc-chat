@@ -13,6 +13,15 @@
         });
       };
 
+      this.openUser = function()  {
+        $uibModal.open({
+          animation: true,
+          templateUrl: '/templates/user.html',
+          controller: 'ModalCtrl as modal',
+          backdrop: 'static'
+        });
+      };
+
       this.selectRoom = function(room)  {
         console.log(room);
         this.activeRoom = room.roomName;

@@ -11,7 +11,17 @@
     </table>
   </section>
 
-  <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
+  <p>
+    <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
+  </p>
+  <p>
+    <button type="button" class="btn btn-default" ng-click="home.openUser()" data-toggle="modal">Add User</button>
+  </p>
+
+  <div>
+    Current User is:
+    {{home.modal.currentUser}}
+  </div>
 
 
   <section class="container">

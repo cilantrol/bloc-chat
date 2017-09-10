@@ -10,7 +10,7 @@
       <label for="">UserName</label>
       <input type="text" class="form-control finderBar"
       name="userName"
-      ng-model="BlocChatCookies.currentUser"
+      ng-model="modal.currentUser"
       required
       placeholder="Please enter an username..."/>
 
@@ -18,6 +18,8 @@
         ng-disabled="addUserForm.$invalid">
         <button class="btn btn-default btn-success" type="submit"
         ng-disabled="addUserForm.$invalid"
+        ng-click="modal.setUser(currentUser); modal.cancel()"
+        data-dismiss="modal"
         >Create</button>
       </span>
     </div>
@@ -26,5 +28,5 @@
 </div>
 <div class="modal-footer modal-sm">
   <span ng-show="addUserForm.userName.$error.required" class="help-inline">Cannot be Empty!</span>
-
+  {{currentUser}}
 </div>
