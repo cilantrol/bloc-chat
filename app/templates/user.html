@@ -18,7 +18,7 @@
         ng-disabled="addUserForm.$invalid">
         <button class="btn btn-default btn-success" type="submit"
         ng-disabled="addUserForm.$invalid"
-        ng-click="modal.setUser(currentUser); modal.cancel()"
+        ng-click="modal.setUser(modal.currentUser)"
         data-dismiss="modal"
         >Create</button>
       </span>
@@ -28,5 +28,4 @@
 </div>
 <div class="modal-footer modal-sm">
   <span ng-show="addUserForm.userName.$error.required" class="help-inline">Cannot be Empty!</span>
-  {{currentUser}}
 </div>

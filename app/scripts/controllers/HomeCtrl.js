@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl(Room, Message, $uibModal) {
+    function HomeCtrl(Room, Message, $cookies, $uibModal) {
       this.rooms = Room.all;
       this.messages = null;
       this.activeRoom = null;
@@ -28,15 +28,18 @@
         this.messages = Message.getByRoomId(room.$id);
       };
 
-      /*this.addUser = function() {
-        $uibModal.open({
-          animation: true,
-          templateUrl: '/templates/user.html',
-        });
-      };*/
-    }
+      this.showUser = function()  {
+        if (!$cookies.get('blocChatCurrentUser')) {
+          return 'none set';
+        }else {
+          return  $cookies.get('blocChatCurrentUser');
+        }
+
+      };
+
+    } 
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$cookies', '$uibModal', HomeCtrl]);
 })();

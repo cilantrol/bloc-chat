@@ -14,9 +14,13 @@
       };
 
       this.setUser= function(val)  {
-        console.log("Current user is " + $cookies.blocChatCurrentUser);
-        currentUser.put('blocChatCurrentUser', val);
+        console.log("Current user is " + currentUser);
+        $cookies.put('blocChatCurrentUser', val);
+        $uibModalInstance.dismiss();
       };
+
+
+
     }
 
     angular
