@@ -4,8 +4,6 @@
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
 
-    var query;
-
     /** @method .all
     **  @desc array of room {objects}
     **  @type {array}

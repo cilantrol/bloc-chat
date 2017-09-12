@@ -13,13 +13,11 @@
         $uibModalInstance.close();
       };
 
-      this.setUser= function(val)  {
+      this.setUser = function(val)  {
         console.log("Current user is " + currentUser);
         $cookies.put('blocChatCurrentUser', val);
         $uibModalInstance.dismiss();
       };
-
-
 
     }
 

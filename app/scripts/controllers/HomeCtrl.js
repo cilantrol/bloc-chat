@@ -3,6 +3,7 @@
       this.rooms = Room.all;
       this.messages = null;
       this.activeRoom = null;
+      this.chatInput = {};
 
       this.open = function() {
         $uibModal.open({
@@ -24,7 +25,8 @@
 
       this.selectRoom = function(room)  {
         console.log(room);
-        this.activeRoom = room.roomName;
+        this.activeRoom = room;
+        this.activeRoom.name = room.roomName;
         this.messages = Message.getByRoomId(room.$id);
       };
 
@@ -34,10 +36,21 @@
         }else {
           return  $cookies.get('blocChatCurrentUser');
         }
-
       };
 
-    } 
+      this.addMessage = function(content) {
+        this.chatInput.user = $cookies.get('blocChatCurrentUser');
+        this.chatInput.sentAt = firebase.database.ServerValue.TIMESTAMP;
+        this.chatInput.roomId = this.activeRoom.$id;
+        this.chatInput.content = content;
+        Message.send(this.chatInput);
+        console.log(this.chatInput.sentAt);
+        console.log(this.chatInput.user);
+        console.log(this.activeRoom);
+        console.log(this.chatInput);
+      };
+
+    }
 
     angular
         .module('blocChat')

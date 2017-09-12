@@ -10,36 +10,34 @@
       </tr>
     </table>
   </section>
-
   <p>
     <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
   </p>
   <p>
     <button type="button" class="btn btn-default" ng-click="home.openUser()" data-toggle="modal">Add User</button>
   </p>
-
   <div>
     Current User is:
     {{ home.showUser() }}
   </div>
 
-
   <section class="container">
-    <h3>{{home.activeRoom}}</h3>
+    <h3>{{home.activeRoom.name}}</h3>
      <div class="chat-container columms"
      ng-repeat="message in home.messages">
        <p> {{message.user}}
-           {{message.sentAt}} :
+           {{message.sentAt | date: "shortTime"}} :
            {{message.content}} </p>
      </div>
-     <form ng-submit=""
+     <form name="addContent"
      ng-show="home.activeRoom">
        <input type="text" id="chatMessage"
-
+       ng-model="home.chatInput.content"
        placeholder="type here..."
       >
        <span class="input-group-btn">
          <button class="btn btn-success" type="submit"
+         ng-click="home.addMessage(home.chatInput.content)"
          >Send
          </button>
        </span>
