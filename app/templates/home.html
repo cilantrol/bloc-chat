@@ -1,45 +1,57 @@
-<h1>Bloc Chat</h1>
-  <section class="left-side navigation">
-    <table class="control-room">
-      <tr class="room-number" ng-repeat="room in home.rooms">
-        <td class="btn-default"
-          ng-click="home.selectRoom(room)"
-          data-toggle="modal">
-          {{$index+1}} {{room.roomName }}
-        </td>
-      </tr>
-    </table>
-  </section>
-  <p>
-    <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
-  </p>
-  <p>
-    <button type="button" class="btn btn-default" ng-click="home.openUser()" data-toggle="modal">Add User</button>
-  </p>
-  <div>
-    Current User is:
-    {{ home.showUser() }}
-  </div>
-
-  <section class="container">
+<aside class="left-side navigation clearfix">
+  <h1>Bloc Chat</h1>
+  <table class="control-room">
+    <tr class="room-number" ng-repeat="room in home.rooms">
+      <td class="btn-default active"
+        ng-click="home.selectRoom(room)"
+        data-toggle="modal">
+        {{$index+1}} {{room.roomName }}
+      </td>
+    </tr>
+  </table>
+  <button type="button" class="btn btn-default" ng-click="home.open()" data-toggle="modal">Add Room</button>
+  <br/>
+  <button type="button" class="btn btn-default" ng-click="home.openUser()" data-toggle="modal">Change User</button>
+</aside>
+<header class="clearfix">
+  Current User is:
+  {{ home.showUser() }}
+  <div class="col-xs-12 col-md-8">
+    SOME BANNER
     <h3>{{home.activeRoom.name}}</h3>
+  </div>
+</header>
+<content>
+  <section class="container default-image clearfix">
+  </section>
+  <section class="container scroll clearfix"
+  ng-show="home.activeRoom"
+  scroll glue force-glue
+  >
      <div class="chat-container columms"
-     ng-repeat="message in home.messages">
-       <p> {{message.user}}
+     ng-repeat="message in home.messages"
+     scroll glue force-glue
+     >
+       <p scroll glue> {{message.user}}
            {{message.sentAt | date: "shortTime"}} :
            {{message.content}} </p>
      </div>
-     <form name="addContent"
-     ng-show="home.activeRoom">
-       <input type="text" id="chatMessage"
-       ng-model="home.chatInput.content"
-       placeholder="type here..."
-      >
-       <span class="input-group-btn">
-         <button class="btn btn-success" type="submit"
-         ng-click="home.addMessage(home.chatInput.content)"
-         >Send
-         </button>
-       </span>
-     </form>
   </section>
+</content>
+<p style="left:0%, display: inline, position: fixed;">pristine: {{addContent.$pristine}} </p>
+<footer class="">
+  <form name="addContent"
+  ng-show="home.activeRoom">
+    <label for="chatMessage"></label>
+    <input type="text" id="chatMessage"
+    ng-model="home.chatInput.content"
+    placeholder="type here..."
+    >
+    <span class="input-group-btn">
+      <button class="btn btn-success" type="submit"
+      ng-click="home.addMessage(home.chatInput.content)"
+      >Send
+      </button>
+    </span>
+  </form>
+</footer>

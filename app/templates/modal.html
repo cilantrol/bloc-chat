@@ -1,30 +1,27 @@
-  <div class="modal-header">
-    <h4 class="modal-title">modal header</h4>
-  </div>
-  <div class="modal-body modal-sm">
-    <style>
-        input.ng-invalid{border: 1px solid red;}
-    </style>
-    <form name="addRoomForm">
-      <div class="input-group animated fadeIn">
-        <label for="">Room Name </label>
-        <input type="text" class="form-control finderBar"
-        name="roomName"
-        ng-model="modal.defaultStatement"
-        required
-        placeholder="Please enter a Room..."/>
-
-        <span class="input-group-btn">
-          <!-- ng-disabled="addRoomForm.$invalid"  -->
-          <button class="btn btn-default btn-success" type="submit"
-          ng-disabled="addRoomForm.$invalid"
-          ng-click="modal.ok()">Add</button>
-        </span>
-      </div>
-    </form>
-
-  </div>
-  <div class="modal-footer modal-sm">
-    <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Cannot be Empty!</span>
-    <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
-  </div>
+<div class="modal-header">
+  <h4 class="modal-title">Add Room</h4>
+</div>
+<div class="modal-body modal-sm">
+  <form name="addRoomForm">
+    <fieldset class="input-group animated fadeIn has-error has-feedback">
+      <label for="roomName">Room Name </label>
+      <input type="text" class="form-control finderBar"
+      id="roomName"
+      name="roomName"
+      ng-model="modal.defaultStatement"
+      ng-required="(modal.defaultStatement) ? true : false"
+      required
+      placeholder="Please enter a Room..."/>
+      <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-success" type="submit"
+        ng-disabled="addRoomForm.$invalid"
+        ng-click="modal.ok()">Add</button>
+      </span>
+    </fieldset>
+  </form>
+</div>
+<div class="modal-footer modal-sm">
+  <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Cannot be Empty!</span>
+  <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
+</div>

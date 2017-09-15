@@ -28,6 +28,7 @@
         this.activeRoom = room;
         this.activeRoom.name = room.roomName;
         this.messages = Message.getByRoomId(room.$id);
+        //this.activeRoom = !this.activeRoom;
       };
 
       this.showUser = function()  {
@@ -43,11 +44,13 @@
         this.chatInput.sentAt = firebase.database.ServerValue.TIMESTAMP;
         this.chatInput.roomId = this.activeRoom.$id;
         this.chatInput.content = content;
+        var pristine = { content: ''};
+        this.chatInput = angular.copy(pristine);
+        //this.addContent.$setPristine();
         Message.send(this.chatInput);
-        console.log(this.chatInput.sentAt);
-        console.log(this.chatInput.user);
         console.log(this.activeRoom);
         console.log(this.chatInput);
+        console.log(this.addContent);
       };
 
     }

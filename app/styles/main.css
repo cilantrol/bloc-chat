@@ -3,6 +3,15 @@ html {
   font-size: 100%;
 }
 
+header  {
+  position: absolute;
+  top: 0;
+  display: inline;
+  width: 80%;
+  left: 12.5%;
+  height: 15vh;
+  background-color: grey;
+}
 body {
   background: #D9F9D9 no-repeat fixed center;
   background-size: cover;
@@ -10,6 +19,17 @@ body {
   min-height: 100%;
 }
 
+footer  {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 8vh;
+  left: 12.5%;
+}
+
+.left-side navigation {
+  display: inline;
+}
 .control-room {
   width: 10%;
   margin: 1.5rem;
@@ -39,11 +59,23 @@ body {
 .container  {
   color: blue;
   background-color: rgba(140, 166, 189, 0.55);
-  height: 100%;
-  width: 100%;
+  height: 75%;
+  width: 80%;
   position: fixed;
   left: 12.5%;
-  top: 0px;
+  top: 134px;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+.default-image  {
+  position: fixed;
+  min-height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/images/21.png);
 }
 
 .container .messages  {

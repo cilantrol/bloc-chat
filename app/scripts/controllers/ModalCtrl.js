@@ -4,17 +4,29 @@
       this.defaultStatement = '';
       var currentUser = $cookies.get('blocChatCurrentUser');
 
-
+      /** @method .ok
+      **  @desc Filter messages by roomId {object} property
+      **  @type {array}
+      **  @private
+      */
       this.ok = function() {
           Room.add(this.defaultStatement);
       };
 
+      /** @method .cancel
+      **  @desc close add Room module
+      **  @private
+      */
       this.cancel = function() {
         $uibModalInstance.close();
       };
 
+      /** @method .setUser
+      **  @desc Filter messages by roomId {object} property
+      **  @type {array}
+      **  @private
+      */
       this.setUser = function(val)  {
-        console.log("Current user is " + currentUser);
         $cookies.put('blocChatCurrentUser', val);
         $uibModalInstance.dismiss();
       };
