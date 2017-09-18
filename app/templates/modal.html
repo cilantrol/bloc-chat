@@ -1,27 +1,27 @@
-<div class="modal-header">
+<div class="modal-header modal-sm">
   <h4 class="modal-title">Add Room</h4>
 </div>
 <div class="modal-body modal-sm">
-  <form name="addRoomForm">
-    <fieldset class="input-group animated fadeIn has-error has-feedback">
+  <form name="addRoomForm" ng-submit="modal.addRoom(modal.roomInput.roomName)" novalidate>
+    <fieldset class="form-inline animated fadeIn"
+    ng-class="{ 'has-error' : addRoomForm.$invalid && !modal.roomInput.roomName.$pristine ,
+                'has-success' : addRoomForm.$valid }">
       <label for="roomName">Room Name </label>
       <input type="text" class="form-control finderBar"
-      id="roomName"
-      name="roomName"
-      ng-model="modal.defaultStatement"
-      ng-required="(modal.defaultStatement) ? true : false"
+      id="roomName" name="roomName"
+      ng-model="modal.roomInput.roomName"
       required
       placeholder="Please enter a Room..."/>
-      <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-      <span class="input-group-btn">
-        <button class="btn btn-default btn-success" type="submit"
-        ng-disabled="addRoomForm.$invalid"
-        ng-click="modal.ok()">Add</button>
-      </span>
+      <!--<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span> -->
     </fieldset>
+    <div class="modal-footer modal-sm">
+      <span class="btn-group inline pull-right">
+        <button class="btn btn-default btn-success" type="submit"
+        ng-disabled="addRoomForm.$invalid">Add</button>
+        <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
+      </span>
+      <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Cannot be Empty!</span>
+
+    </div>
   </form>
-</div>
-<div class="modal-footer modal-sm">
-  <span ng-show="addRoomForm.roomName.$error.required" class="help-inline">Cannot be Empty!</span>
-  <button class="btn btn-primary" type="button" ng-click="modal.cancel()" data-dismiss="modal">Close</button>
 </div>

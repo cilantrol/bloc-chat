@@ -1,16 +1,17 @@
 (function() {
     function ModalCtrl(Room, $cookies, $uibModalInstance) {
       this.room = Room.all;
-      this.defaultStatement = '';
+      this.roomInput = {};
       var currentUser = $cookies.get('blocChatCurrentUser');
 
-      /** @method .ok
+      /** @method .addRoom
       **  @desc Filter messages by roomId {object} property
       **  @type {array}
       **  @private
       */
-      this.ok = function() {
-          Room.add(this.defaultStatement);
+      this.addRoom = function(content) {
+          this.roomInput.roomName = content;
+          Room.add(this.roomInput);
       };
 
       /** @method .cancel
@@ -22,8 +23,7 @@
       };
 
       /** @method .setUser
-      **  @desc Filter messages by roomId {object} property
-      **  @type {array}
+      **  @desc set $cookie blocChatCurrentUser
       **  @private
       */
       this.setUser = function(val)  {

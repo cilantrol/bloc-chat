@@ -27,7 +27,7 @@ footer  {
   left: 12.5%;
 }
 
-.left-side navigation {
+.left-side .navigation {
   display: inline;
 }
 .control-room {
@@ -48,13 +48,9 @@ footer  {
 
 .help-inline  {
   position: relative;
-  left: -86px;
+  left: -3rem;
 }
 
-.btn:first-child {
-    position: relative;
-    top: 1rem;
-}
 
 .container  {
   color: blue;
@@ -83,7 +79,9 @@ footer  {
   left: 0%;
 }
 
-
+#chatMessage  {
+  width: 85%;
+}
 @media (min-width: 640px) {
   html  { font-size: 112%;}
     .column {

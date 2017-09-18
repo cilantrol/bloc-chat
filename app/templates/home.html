@@ -26,16 +26,15 @@
   </section>
   <section class="container scroll clearfix"
   ng-show="home.activeRoom"
-  scroll glue force-glue
+  scroll-glue force-glue
   >
-     <div class="chat-container columms"
-     ng-repeat="message in home.messages"
-     scroll glue force-glue
-     >
-       <p scroll glue> {{message.user}}
-           {{message.sentAt | date: "shortTime"}} :
-           {{message.content}} </p>
-     </div>
+      <div class="chat-container columms"
+      ng-repeat="message in home.messages"
+      >
+        <p> {{message.user}}
+            {{message.sentAt | date: "shortTime"}} :
+            {{message.content}} </p>
+      </div>
   </section>
 </content>
 <p style="left:0%, display: inline, position: fixed;">pristine: {{addContent.$pristine}} </p>
